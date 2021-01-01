@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React para Iniciantes</title>
+
+  <!-- Adicionar o React. -->
+  <!-- Nota: ao fazer o deploy, substitua "development.js" por "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <!-- Babel -->
+  <script crossorigin src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script type="text/babel">
+    const ShoppingCart = () => {
+      const [counter, setCounter] = React.useState(0);
+
+      function buy() {
+        setCounter(counter + 1);
+      }
+
+      return (
+        <div>
+          <button onClick={buy}>Comprar</button>
+          <p>Total: {counter}</p>
+          <p>Preço: R$ {counter * 250}</p>
+        </div>
+      )
+    }
+
+    const Button = () => {
+      function handleClick(event) {
+        console.log(event.target.innerText);
+      }
+
+      return <button onClick={handleClick}>Comprar</button>
+    }
+
+    const Title = () => {
+      const randomNumber = Math.random() * 1000;
+
+      return <h1>Meu título {randomNumber}</h1>
+    }
+
+    const App = () => {
+      return <div>
+        Meu App
+        <ShoppingCart />
+        <Title />
+        <Button />
+        <div>
+          Compre aqui também.
+          <Button />
+        </div>
+      </div>
+    }
+
+    // class Button extends React.Component {
+    //   render() {
+    //     return <button>Comprar</button>
+    //   }
+    // }
+
+    ReactDOM.render(<App />, document.getElementById('app'));
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React para Iniciantes</title>
+
+  <!-- Adicionar o React. -->
+  <!-- Nota: ao fazer o deploy, substitua "development.js" por "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <!-- Babel -->
+  <script crossorigin src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
+</head>
+<body>
+  <div id="app-javascript">
+    <p>Total: <span id="total"></span></p>
+    <p>Preço: R$ <span id="price"></span></p>
+    <button id="button">Comprar</button>
+  </div>
+
+  <script type="application/javascript">
+    const total = document.getElementById('total');
+    const price = document.getElementById('price');
+    const button = document.getElementById('button');
+
+    let counter = 1;
+
+    function updateValues(counter) {
+      total.innerText = counter;
+      price.innerText = counter * 250;
+    }
+
+    function handleClick() {
+      counter++;
+
+      updateValues(counter);
+    }
+
+    updateValues(counter);
+    button.addEventListener('click', handleClick);
+  </script>
+
+  <div id="app-react"></div>
+
+  <script type="text/babel">
+    const Buy = () => {
+      const [counter, setCounter] = React.useState(1);
+
+      return (
+        <div>
+          <p>Total: {counter}</p>
+          <p>Preço: R$ {counter * 250}</p>
+          <button onClick={() => setCounter(counter + 1)}>Comprar</button>
+        </div>
+      )
+    }
+
+    ReactDOM.render(<Buy />, document.getElementById('app-react'));
+  </script>
+</body>
+</html>

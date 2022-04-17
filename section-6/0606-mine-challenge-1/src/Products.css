@@ -1,0 +1,13 @@
+.products-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.products-img {
+  border-radius: 8px;
+  width: 200px;
+}
+
+.products-name {
+  margin-top: 5px;
+}

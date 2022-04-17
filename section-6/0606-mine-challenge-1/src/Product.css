@@ -1,0 +1,26 @@
+.product {
+  display: flex;
+}
+
+.product-img-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+}
+
+.product-img {
+  border-radius: 8px;
+  width: 300px;
+}
+
+.product-img:not(:last-of-type) {
+  margin-bottom: 40px;
+}
+
+.tag {
+  background-color: #adff2f;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 10px 5px;
+  width: fit-content;
+}

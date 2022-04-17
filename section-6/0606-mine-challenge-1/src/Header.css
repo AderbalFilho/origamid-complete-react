@@ -1,0 +1,13 @@
+.header {
+  margin-bottom: 30px;
+}
+
+.button {
+  background-color: #ccc;
+  color: #000;
+  padding: 10px 15px;
+}
+
+.button:first-of-type {
+  margin-right: 15px;
+}

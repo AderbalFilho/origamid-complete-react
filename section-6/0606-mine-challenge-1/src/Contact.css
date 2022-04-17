@@ -1,0 +1,11 @@
+.list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list li::before {
+  color: #ccc;
+  content: "__";
+  padding-right: 8px;
+}

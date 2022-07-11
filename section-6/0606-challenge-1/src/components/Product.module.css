@@ -1,0 +1,23 @@
+.product {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.product img {
+  margin-bottom: 2rem;
+}
+
+.price {
+  background: #91fb5d;
+  border-radius: 4px;
+  color: #017e01;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: .5rem;
+}
+
+.description {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+}
